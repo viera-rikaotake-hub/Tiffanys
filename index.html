@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tiffany’s</title>
+  <style>
+    :root {
+      --purple: #BA19E0;
+      --navy: #05309E;
+      --black: #000000;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--black);
+      color: var(--white);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      background-color: var(--navy);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .logo { font-size: 1.8em; font-weight: bold; color: var(--purple); }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      margin-left: 30px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: var(--purple); }
+
+    /* Intro */
+    .intro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 100px 50px;
+      gap: 50px;
+      background: linear-gradient(to bottom, var(--navy), var(--black));
+    }
+
+    .intro-text { flex: 1; max-width: 500px; }
+
+    .intro-text h1 { font-size: 3em; margin-bottom: 20px; color: var(--purple); }
+
+    .intro-text p { font-size: 1.2em; margin-bottom: 30px; line-height: 1.5; }
+
+    .intro-text button {
+      background-color: var(--purple);
+      color: var(--white);
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      margin-right: 10px;
+    }
+
+    .intro-text button:hover { background-color: var(--navy); }
+
+    .intro-image { flex: 1; display: flex; justify-content: center; }
+    .intro-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      border: 5px solid var(--purple);
+      box-shadow: 0 0 20px var(--purple);
+      transition: transform 0.3s;
+    }
+    .intro-image img:hover { transform: scale(1.05); }
+
+    /* Stats-sektion */
+    .stats-section {
+      padding: 80px 20px;
+      text-align: center;
+      background-color: var(--black);
+    }
+    .stats-section h2 { font-size: 2.5em; color: var(--purple); margin-bottom: 50px; }
+
+    .stats-cards {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      background-color: var(--navy);
+      border-radius: 20px;
+      padding: 30px;
+      width: 200px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .card:hover { transform: scale(1.05); box-shadow: 0 0 25px var(--purple); }
+
+    .card h3 { font-size: 1.2em; margin-bottom: 15px; color: var(--white); }
+    .card p { font-size: 1.5em; color: var(--purple); }
+
+    /* Sociala medier */
+    .socials { display: flex; justify-content: center; margin-top: 50px; gap: 25px; }
+    .socials img {
+      width: 50px; cursor: pointer;
+      transition: transform 0.3s, filter 0.3s;
+    }
+    .socials img:hover { transform: scale(1.2); filter: drop-shadow(0 0 10px var(--purple)); }
+
+    /* Power Mode */
+    .power-mode { box-shadow: 0 0 60px var(--purple); background-color: var(--purple) !important; color: var(--black); }
+
+    @media(max-width: 900px) {
+      .intro { flex-direction: column; text-align: center; padding: 50px 20px; }
+      .intro-image img { max-width: 80%; }
+      .stats-cards { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="logo">##</div>
+    <nav>
+      <a href="#">Info om oss</a>
+      <a href="#">Valorant</a>
+      <a href="#">Info om laget</a>
+    </nav>
+  </header>
+
+  <!-- Intro -->
+  <section class="intro">
+    <div class="intro-text">
+      <h1 id="intro-title">Välkommen till  Tiffany’swebbsida</h1>
+      <p id="intro-text">Utforska min profil, se mina stats och följ mig på sociala medier. Den här sidan är interaktiv och kreativ med färgstark design och animationer.</p>
+      <button id="powerBtn">Aktivera Power Mode ⚡</button>
+      <button id="langBtn">English</button>
+    </div>
+    <div class="intro-image">
+      <img src="https://i.imgur.com/ZKkA4mE.jpg" alt="Profilbild">
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <section class="stats-section">
+    <h2 id="stats-title">Min Statistik</h2>
+    <div class="stats-cards">
+      <div class="card">
+        <h3>Level</h3>
+        <p id="level">42</p>
+      </div>
+      <div class="card">
+        <h3>XP</h3>
+        <p id="xp">13,500</p>
+      </div>
+      <div class="card">
+        <h3>Accuracy</h3>
+        <p id="accuracy">92%</p>
+      </div>
+      <div class="card">
+        <h3>Followers</h3>
+        <p id="followers">25K+</p>
+      </div>
+    </div>
+
+    <!-- Sociala medier -->
+    <div class="socials">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="Instagram"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" alt="Twitter"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111668.png" alt="Twitch"></a>
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="YouTube"></a>
+    </div>
+  </section>
+
+  <script>
+    // Power Mode
+    const powerBtn = document.getElementById('powerBtn');
+    const cards = document.querySelectorAll('.card');
+
+    powerBtn.addEventListener('click', () => {
+      cards.forEach(card => card.classList.toggle('power-mode'));
+      if (powerBtn.textContent.includes("Aktivera")) {
+        powerBtn.textContent = "Power Mode: ON 🔥";
+      } else {
+        powerBtn.textContent = "Aktivera Power Mode ⚡";
+      }
+    });
+
+    // Språkknapp: Svenska <-> Engelska
+    const langBtn = document.getElementById('langBtn');
+    const texts = {
+      sv: {
+        introTitle: "Välkommen till min profilwebbsida",
+        introText: "Utforska min profil, se mina stats och följ mig på sociala medier. Den här sidan är interaktiv och kreativ med färgstark design och animationer.",
+        statsTitle: "Min Statistik",
+        powerBtn: "Aktivera Power Mode ⚡",
+        langBtn: "English"
+      },
+      en: {
+        introTitle: "Welcome to my profile webpage",
+        introText: "Explore my profile, see my stats and follow me on social media. This page is interactive and creative with colorful design and animations.",
+        statsTitle: "My Stats",
+        powerBtn: "Activate Power Mode ⚡",
+        langBtn: "Svenska"
+      }
+    };
+
+    let currentLang = 'sv';
+
+    langBtn.addEventListener('click', () => {
+      currentLang = currentLang === 'sv' ? 'en' : 'sv';
+      document.getElementById('intro-title').textContent = texts[currentLang].introTitle;
+      document.getElementById('intro-text').textContent = texts[currentLang].introText;
+      document.getElementById('stats-title').textContent = texts[currentLang].statsTitle;
+      powerBtn.textContent = texts[currentLang].powerBtn;
+      langBtn.textContent = texts[currentLang].langBtn;
+    });
+  </script>
+</body>
+</html>
